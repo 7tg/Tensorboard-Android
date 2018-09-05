@@ -1,5 +1,6 @@
 package com.tayyipgoren.tensorboard;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -87,6 +88,17 @@ public class MainActivity extends AppCompatActivity
         switch (itemId) {
             case R.id.nav_main:
                 fragment = new ConnectFragment();
+                break;
+            case R.id.nav_share:
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT,
+                        getString(R.string.share_text) + "https://play.google.com/store/apps/details?id=com.google.android.apps.plus");
+                sendIntent.setType("text/plain");
+                startActivity(sendIntent);
+                break;
+            case R.id.nav_about:
+                fragment = new AboutFragment();
                 break;
         }
 

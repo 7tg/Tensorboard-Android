@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#ef642a</color>
     <color name="colorPrimaryDark">#ef642a</color>
-    <color name="colorAccent">#F59120</color>
+    <color name="colorAccent">#f59120</color>
     <color name="tensorflow_orange">#ef642a</color>
     <color name="black_overlay">#66fdfdfd</color>
 </resources>

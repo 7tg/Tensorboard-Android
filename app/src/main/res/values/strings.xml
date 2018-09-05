@@ -11,9 +11,12 @@
     <string name="title_activity_logo">LogoActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-
-
+    <string name="about">About</string>
+    <string name="share">Share</string>
+    <string name="app_name_menu">Unoffical TensorBoard App</string>
     <string name="main">Main</string>
+    <string name="my_title">Developer/Designer</string>
+    <string name="share_text">Hey check out Tensorboard app at: </string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
