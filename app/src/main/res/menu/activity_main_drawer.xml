@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="single">
+    <group
+        android:id="@+id/main_menu"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/nav_main"
             android:icon="@drawable/ic_http"
             android:title="@string/main" />
 
+
     </group>
-    <item android:title="@string/about">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="@string/share" />
-            <item
-                android:id="@+id/nav_about"
-                android:icon="@drawable/ic_info"
-                android:title="@string/about" />
-        </menu>
-    </item>
+
+    <group
+        android:id="@+id/about"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/ic_menu_share"
+            android:title="@string/share" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_info"
+            android:title="@string/about" />
+    </group>
+
 
 </menu>

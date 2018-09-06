@@ -7,9 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * Created by Belal on 18/09/16.
- */
 
 
 public class WebPageFragment extends Fragment {
