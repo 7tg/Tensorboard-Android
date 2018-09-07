@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,6 +66,14 @@ public class ConnectFragment extends Fragment {
                 } else if (adress.equals("") || port_num.equals("")) {
                     Snackbar.make(getView(), getString(R.string.error_ip_or_port_isnotvalid), 3000).show();
                 }
+                Bundle bundle = new Bundle();
+                bundle.putString("url", "http://" + adress + ":" + port + "/");
+                bundle.putString("title", "TensorBoard");
+                WebPageFragment webPageFragment = new WebPageFragment();
+                webPageFragment.setArguments(bundle);
+                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.content_frame, webPageFragment);
+                ft.commit();
             }
         });
     }
