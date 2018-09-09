@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class ConnectFragment extends Fragment {
@@ -56,20 +57,20 @@ public class ConnectFragment extends Fragment {
         connect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*Debugging
+
                 String adress = ip.getText().toString();
                 String port_num = port.getText().toString();
-                */
-                String adress = "192.168.2.2";
-                String port_num = "8181";
+
                 if (haveInternet(getContext()) == false) {
-                    Snackbar.make(getView(), getString(R.string.error_no_connection_avaible), 3000).show();
+                    Toast.makeText(getContext(), getString(R.string.error_no_connection_avaible), Toast.LENGTH_LONG).show();
+                    return;
                 } else if (adress.equals("") || port_num.equals("")) {
-                    Snackbar.make(getView(), getString(R.string.error_ip_or_port_isnotvalid), 3000).show();
+                    Toast.makeText(getContext(), getString(R.string.error_ip_or_port_isnotvalid), Toast.LENGTH_LONG).show();
+                    return;
                 }
                 Bundle bundle = new Bundle();
                 bundle.putString("url", "http://" + adress + ":" + port_num + "/");
-                bundle.putString("title", "TensorBoard");
+                bundle.putString("title", getString(R.string.tensorboard));
                 WebPageFragment webPageFragment = new WebPageFragment();
                 webPageFragment.setArguments(bundle);
 
@@ -88,7 +89,7 @@ public class ConnectFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //you can set the title for your toolbar here for different fragments different titles
-        getActivity().setTitle("Connect");
+        getActivity().setTitle(getString(R.string.connect));
     }
 
 }

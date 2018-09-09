@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/news"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_news"
+            android:icon="@drawable/ic_news"
+            android:title="@string/news">
+
+        </item>
+
+    </group>
 
     <group
         android:id="@+id/main_menu"
@@ -7,7 +18,7 @@
         <item
             android:id="@+id/nav_main"
             android:icon="@drawable/ic_http"
-            android:title="@string/main" />
+            android:title="@string/tensorboard" />
         <item
             android:id="@+id/nav_docs"
             android:icon="@drawable/ic_tensorflow_logo"
@@ -16,13 +27,21 @@
             android:id="@+id/nav_keras"
             android:icon="@drawable/ic_menu__keras"
             android:title="@string/keras" />
+        <item
+            android:id="@+id/nav_numpy"
+            android:icon="@drawable/ic_numpy"
+            android:title="@string/numpy" />
+        <item
+            android:id="@+id/nav_mathplotlib"
+            android:icon="@drawable/ic_mathplotlib"
+            android:title="@string/mathplotlib" />
 
 
     </group>
 
     <group
         android:id="@+id/about"
-        android:checkableBehavior="single">
+        android:checkableBehavior="none">
         <item
             android:id="@+id/nav_share"
             android:icon="@drawable/ic_menu_share"

@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">ML Toolbox</string>
-    <string name="version_key">0.0.1</string>
+    <string name="version_key">0.0.2</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
@@ -12,12 +12,20 @@
     <string name="about">About</string>
     <string name="share">Share</string>
     <string name="app_name_menu">{ML} Toolbox</string>
-    <string name="main">Tensorboard</string>
+
+    <string name="tensorboard">Tensorboard</string>
     <string name="docs">TensorFlow Guide</string>
     <string name="keras">Keras</string>
+    <string name="mathplotlib">Mathplotlib</string>
+    <string name="numpy">NumPy</string>
+
     <string name="my_title">Developer /Designer</string>
     <string name="share_text">Hey check out {ML} Toolbox app at: </string>
+    <string name="news">News</string>
 
+
+    <string name="go_to_settings">Go To Settings</string>
+    <string name="exit">Exit</string>
 
     <string name="error_ip_or_port_isnotvalid">Ip or Port is not valid</string>
     <string name="error_no_connection_avaible">No connection available</string>
