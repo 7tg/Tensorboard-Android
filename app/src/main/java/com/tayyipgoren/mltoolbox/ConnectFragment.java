@@ -1,21 +1,19 @@
-package com.tayyipgoren.tensorboard;
+package com.tayyipgoren.mltoolbox;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 
 public class ConnectFragment extends Fragment {
@@ -58,19 +56,27 @@ public class ConnectFragment extends Fragment {
         connect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                /*Debugging
                 String adress = ip.getText().toString();
                 String port_num = port.getText().toString();
-
+                */
+                String adress = "192.168.2.2";
+                String port_num = "8181";
                 if (haveInternet(getContext()) == false) {
                     Snackbar.make(getView(), getString(R.string.error_no_connection_avaible), 3000).show();
                 } else if (adress.equals("") || port_num.equals("")) {
                     Snackbar.make(getView(), getString(R.string.error_ip_or_port_isnotvalid), 3000).show();
                 }
                 Bundle bundle = new Bundle();
-                bundle.putString("url", "http://" + adress + ":" + port + "/");
+                bundle.putString("url", "http://" + adress + ":" + port_num + "/");
                 bundle.putString("title", "TensorBoard");
                 WebPageFragment webPageFragment = new WebPageFragment();
                 webPageFragment.setArguments(bundle);
+
+                // Hide keyboard
+                InputMethodManager inputMethodManager = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputMethodManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
+
                 FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.content_frame, webPageFragment);
                 ft.commit();
@@ -84,4 +90,5 @@ public class ConnectFragment extends Fragment {
         //you can set the title for your toolbar here for different fragments different titles
         getActivity().setTitle("Connect");
     }
+
 }

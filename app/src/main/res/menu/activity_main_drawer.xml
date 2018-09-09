@@ -8,6 +8,14 @@
             android:id="@+id/nav_main"
             android:icon="@drawable/ic_http"
             android:title="@string/main" />
+        <item
+            android:id="@+id/nav_docs"
+            android:icon="@drawable/ic_tensorflow_logo"
+            android:title="@string/docs" />
+        <item
+            android:id="@+id/nav_keras"
+            android:icon="@drawable/ic_menu__keras"
+            android:title="@string/keras" />
 
 
     </group>

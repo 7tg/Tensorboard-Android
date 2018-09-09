@@ -1,12 +1,9 @@
-package com.tayyipgoren.tensorboard;
+package com.tayyipgoren.mltoolbox;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -96,6 +93,12 @@ public class MainActivity extends AppCompatActivity
                 sendIntent.setType("text/plain");
                 startActivity(sendIntent);
                 break;
+            case R.id.nav_docs:
+                loadWebSite("https://www.tensorflow.org/guide/", "TensorFlow Guide");
+                break;
+            case R.id.nav_keras:
+                loadWebSite("http://keras.io/", "Keras");
+                break;
             case R.id.nav_about:
                 fragment = new AboutFragment();
                 break;
@@ -111,5 +114,17 @@ public class MainActivity extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+    }
+
+    private void loadWebSite(String url, String title) {
+        Bundle bundle = new Bundle();
+        bundle.putString("url", url);
+        bundle.putString("title", title);
+        WebPageFragment webPageFragment = new WebPageFragment();
+        webPageFragment.setArguments(bundle);
+
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.content_frame, webPageFragment);
+        ft.commit();
     }
 }

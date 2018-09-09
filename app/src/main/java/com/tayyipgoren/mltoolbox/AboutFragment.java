@@ -1,4 +1,4 @@
-package com.tayyipgoren.tensorboard;
+package com.tayyipgoren.mltoolbox;
 
 
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
 
 /**
@@ -18,6 +19,8 @@ public class AboutFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getActivity().setTitle("About");
+        RelativeLayout relativeLayout = (RelativeLayout) getActivity().findViewById(R.id.content_layout);
+        relativeLayout.setPadding(50, 50, 50, 50);
         this.setHasOptionsMenu(false);
     }
 

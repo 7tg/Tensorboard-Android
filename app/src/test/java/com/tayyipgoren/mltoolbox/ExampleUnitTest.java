@@ -1,4 +1,4 @@
-package com.tayyipgoren.tensorboard;
+package com.tayyipgoren.mltoolbox;
 
 import org.junit.Test;
 
