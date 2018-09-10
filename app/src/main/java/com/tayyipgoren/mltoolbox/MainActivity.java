@@ -1,5 +1,6 @@
 package com.tayyipgoren.mltoolbox;
 
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -55,6 +56,12 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         checkInternet();
         displaySelectedScreen(R.id.nav_news);
+
+
+
+        /*
+        * Displaying a notification locally
+        */
     }
 
     @Override
@@ -104,7 +111,7 @@ public class MainActivity extends AppCompatActivity
         //initializing the fragment object which is selected
         switch (itemId) {
             case R.id.nav_news:
-                loadWebSite("https://medium.com/tag/machine-learning/latest", "News");
+                loadWebSite("https://i.reddit.com/r/MachineLearning", "News");
                 break;
             case R.id.nav_main:
                 fragment = new ConnectFragment();
